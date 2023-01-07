@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Burnout Settings</title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+<body>
+    <div class="headpage">
+        <div class="container">
+            <div class="containerheader">
+                <div class="containerimg">
+                    <div class="settings">Ayarlar</div>
+                </div>
+            </div>
+            <div class="settings">
+                <div class="check-box b1">
+                    <div class="berkantext">PM Durumu</div>
+                    <input id="input1" type="checkbox" onclick="statebox1()">
+                </div>
+                <div class="check-box b2">
+                    <div class="berkantext">Reklam Durumu</div>
+                    <input id="input1" type="checkbox">
+                </div>
+                <div class="check-box b3">
+                    <div class="berkantext">Admin Duyuru</div>
+                    <input id="input1" type="checkbox">
+                </div>
+                <div class="check-box b4">
+                    <div class="berkantext">Yayın Durumu</div>
+                    <input id="input1" type="checkbox">
+                </div>
+                <div class="check-box b5">
+                    <div class="berkantext">Jail Bildirimi</div>
+                    <input id="input1" type="checkbox">
+                </div>
+                </div>
+            </div>
+            <div class="settings2"></div>
+            <div class="settings3"></div>
+        </div>
+    </div>
+
+    <script>
+
+   if('alt' in window)
+   {
+    alt.on('GetPlayerSettings', (pm, advertisement, adminnotify, yayin) => {
+        if(pm == 1) checkedinput1();
+        if(advertisement == 1) checkedinput2();
+        if(adminnotify == 1) checkedinput3();
+        if(yayin == 1) checkedinput4();
+	});
+   }
+        /*
+        const cb = document.querySelector('#input1');
+        alert(cb.checked); // false*/
+
+        function checkedinput1(){
+            var checkBox = document.getElementById("input1");
+            checkBox.checked = true;
+        }
+
+        function checkedinput2(){
+            var checkBox = document.getElementById("input2");
+            checkBox.checked = true;
+        }
+
+        function checkedinput3(){
+            var checkBox = document.getElementById("input3");
+            checkBox.checked = true;
+        }
+
+        function checkedinput4(){
+            var checkBox = document.getElementById("input4");
+            checkBox.checked = true;
+        }
+
+        function statebox1() {
+        var checkBox = document.getElementById("input1");
+        if (checkBox.checked == true){
+            alert("PM Durumu: Açık");
+            //checkBox.checked = false;
+        } else {
+            alert("PM Durumu: Kapalı");
+            //checkBox.checked = true;
+        }
+    }
+    </script>
+</body>
+</html>
